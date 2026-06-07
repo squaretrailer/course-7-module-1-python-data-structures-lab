@@ -1,8 +1,11 @@
-# This module contains operations related to sets.
-
-def unique_majors(student_list):
+def unique_majors(students):
     """
     Return a set of unique student majors using set comprehension.
-    Extract the major field from each student record.
+
+    Args:
+        students: list of student tuples (ID, Name, Major)
+
+    Returns:
+        a set containing each unique major found in the student list
     """
-    pass
+    return {student[2] for student in students}
