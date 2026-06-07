@@ -1,174 +1,128 @@
-# Student Data Management System Lab
+# Student Data Management System
 
-## Learning Goals
-
-- Utilize **lists, tuples, and sets** to store and manage student records.
-- Apply **list comprehensions** and **dictionary comprehensions** for efficient data filtering.
-- Use **generator expressions** to process large datasets efficiently.
-- Implement **set operations** for tracking unique student attributes.
-- Structure a Python application with modular data management techniques.
-
-## Introduction
-
-In this lab, you will build a **Student Data Management System** that allows users to store, filter, and process student records efficiently. The system will enable users to:
-
-- Store and retrieve student information using **lists, tuples, and sets**.
-- Filter student data dynamically using **list comprehensions** and **dictionary comprehensions**.
-- Process large student datasets efficiently using **generator expressions**.
-- Track unique student attributes (e.g., **majors, completed courses**) using **sets**.
-
-This lab will help you apply Python **data structures** to solve real-world problems efficiently and dynamically.
-
-## Setup Instructions
-
-### Fork and Clone the Repository
-
-1. Go to the provided GitHub repository link.
-2. Fork the repository to your GitHub account.
-3. Clone the forked repository to your local machine using:
-   ```sh
-   git clone <repo-url>
-   cd course-7-module-1-python-data-structures-lab
-   ```
-
-### Install Dependencies
-
-Ensure **Python** is installed:
-```sh
-python --version
-```
-
-Run the following command to install dependencies:
-```sh
-pipenv install
-```
-
-Run the following to enter the virtual environment:
-```sh
-pipenv shell
-```
-
-To run the test suite, use:
-```sh
-pytest -x
-```
-
-## Tasks
-
-### Task 1: Define the Problem
-
-The goal of this lab is to build a **Student Data Management System** that allows users to store, retrieve, and process student records efficiently. The system must provide the following capabilities:
-
-- Manage student records using **lists, tuples, and sets**.
-- Filter student data dynamically using **list comprehensions** and **set comprehensions**.
-- Process large datasets efficiently using **generator expressions**.
-- Track unique student attributes (e.g., completed courses) using **sets**.
-
-The key challenge is to apply **efficient Python data structures** to dynamically handle, filter, and process student information.
+A Python application for storing, filtering, and processing student records using core Python data structures — lists, tuples, sets, and dictionaries — along with comprehensions and generator expressions.
 
 ---
 
-### Task 2: Determine the Design
+## Features
 
-The **Student Data Management System** will be built using structured data handling techniques, including:
-
-- **Lists & Tuples**: Store student data in structured collections.
-- **List Comprehensions & Generator Expressions**: Process and filter student records efficiently.
-- **Sets**: Track unique student data attributes such as completed courses and enrolled majors.
-
-#### Design Breakdown:
-- **Student list storage** using **tuples** and **lists**.
-- **Filtering capabilities** using **list comprehensions**.
-- **Memory-efficient data handling** with **generator expressions**.
-- **Tracking unique attributes** using **sets**.
-
-This structured approach ensures an **efficient, maintainable, and scalable** student data system.
+| Feature | File | Technique |
+|---|---|---|
+| Student dataset | `student_data.py` | List of tuples |
+| Filter by major | `filter.py` | List comprehension |
+| Group students by major | `filter.py` | Dictionary comprehension |
+| Format & display records | `data_processing.py` | f-strings, iteration |
+| Find unique majors | `set_operations.py` | Set comprehension |
+| Count students per major | `set_operations.py` | Dict + set comprehension |
+| Lazy streaming by major | `data_generator.py` | Generator expression |
 
 ---
 
-### Task 3: Develop the Code
+## Project Structure
 
-#### Step 1: Define Student Records using Lists and Tuples
-
-In `student_data.py`, define a list of students as tuples. You can use the example below,
-or make up your own student data.
-
-```python
-# List of students stored as tuples (ID, Name, Major)
-students = [
-    (101, "Alice Johnson", "Computer Science"),
-    (102, "Bob Smith", "Mathematics"),
-    (103, "Charlie Davis", "Physics"),
-    (104, "David Wilson", "Computer Science"),
-    (105, "Eve Lewis", "Mathematics"),
-]
 ```
-
-#### Step 2: Filtering Students Using List Comprehensions
-
-In `filter.py`, edit the `filter_students_by_major` function to return a filtered list
-of students given a major using a list comprehension.
-
-#### Step 3: Displaying Student Data
-
-In `data_processing.py`, edit the `format_student_data` function to return a string for a given student formatted like:
-```python
-"ID: 10 | Name: Louis Medina | Major: Computer Science"
+.
+├── student_data.py      # Core dataset — list of (ID, Name, Major) tuples
+├── filter.py            # List & dictionary comprehensions for filtering/grouping
+├── data_processing.py   # Format and display student records
+├── set_operations.py    # Set comprehensions for unique majors and summaries
+├── data_generator.py    # Generator expressions for memory-efficient streaming
+└── README.md
 ```
-
-#### Step 4: Displaying All Students' Data
-
-In `data_processing.py`, edit the `display_students` function to loop through all students and print each student's
-details using the `format_student_data` function.
-
-#### Step 5: Updating Student Courses Using Set Operations
-
-In `set_operations.py`, edit the `unique_majors` function to return a set of unique student
-majors using set comprehension. For example, given a list of students like:
-```python
-[
-    (101, "Miles", "Mathematics"),
-    (102, "Laura", "Mathematics"),
-    (103, "Benji", "Physics"),
-    (104, "Natalia", "Physics"),
-    (105, "Nadia", "Mathematics"),
-]
-```
-the `unique_majors` function should return (in no particular order):
-```python
-{"Mathematics", "Physics"}
-```
-
-#### Step 6: Create a Student List Generator by Major
-
-In `data_generator.py`, edit the `student_generator` function to return a generator expression
-for all students by major. Example of a generator expression:
-
-```python
-(item_to_return for item_in_iterable in iterable if condition)
-
-# more concrete example:
-number_list = [1,2,3,4,5,6]
-generator_expression = (n * 2 for n in number_list if n > 3)
-```
-
 
 ---
 
-## Best Practices for Managing Student Data
+## Setup
 
-- **Use comments** to clarify logic.
-- **Optimize lookups** with dictionary `.get()` method.
-- **Use set operations** for efficient course tracking.
-- **Apply generator expressions** for memory efficiency.
-- **Update README** to document functionality.
+No external dependencies required — this project uses the Python standard library only.
 
-## Conclusion
+**Requirements:** Python 3.7+
 
-By mastering **Sequences, List Comprehensions, Generator Expressions, Dictionaries, and Sets**, developers can:
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd <repo-folder>
+```
 
-- Optimize **student data storage and retrieval**.
-- Enhance **performance using efficient data structures**.
-- Improve **scalability using structured data management techniques**.
+---
 
-This lab ensures real-world applicability of Python **data structures** in managing dynamic, scalable, and efficient datasets.
+## Usage
+
+Each module can be run independently for a quick demo:
+
+```bash
+# See filtering and grouping in action
+python filter.py
+
+# See formatted student output
+python data_processing.py
+
+# See unique majors and per-major counts
+python set_operations.py
+
+# See generator lazy evaluation
+python data_generator.py
+```
+
+Or import functions into your own scripts:
+
+```python
+from student_data import students
+from filter import filter_students_by_major, students_by_major_dict
+from data_processing import format_student_data, display_students
+from set_operations import unique_majors, major_summary
+from data_generator import student_generator
+
+# Filter to one major
+cs_students = filter_students_by_major(students, "Computer Science")
+
+# Group all students by major (dictionary comprehension)
+grouped = students_by_major_dict(students)
+
+# Display all students
+display_students(students)
+
+# Get unique majors (set comprehension)
+majors = unique_majors(students)
+
+# Stream students lazily (generator expression)
+gen = student_generator(students, "Mathematics")
+print(next(gen))  # (102, 'Bob Smith', 'Mathematics')
+```
+
+---
+
+## Data Structures Used
+
+- **List** — ordered, mutable collection of student tuples (`student_data.py`)
+- **Tuple** — immutable record per student `(ID, Name, Major)`
+- **Set** — unordered, deduplicated collection of majors (`set_operations.py`)
+- **Dictionary** — major → students mapping (`filter.py`, `set_operations.py`)
+
+## Comprehensions & Generators
+
+- **List comprehension** — filters students by major in a single readable line
+- **Dictionary comprehension** — groups students by major into a dict
+- **Set comprehension** — extracts unique majors without manual deduplication
+- **Generator expression** — streams students lazily, one at a time, saving memory
+
+---
+
+## Git Workflow
+
+```bash
+# Create and switch to a feature branch
+git checkout -b feature/student-data-structures
+
+# Stage and commit your work
+git add .
+git commit -m "Implement student filtering and set operations"
+
+# Push branch and open a Pull Request on GitHub
+git push origin feature/student-data-structures
+
+# After PR is reviewed and merged, clean up locally
+git checkout main
+git pull origin main
+git branch -d feature/student-data-structures
+```
