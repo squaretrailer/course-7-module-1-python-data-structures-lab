@@ -1,8 +1,3 @@
-# lib/data_processing.py
-# Handles formatting and displaying student records.
-# Separates presentation logic from data storage and filtering.
-
-
 def format_student_data(student):
     """
     Return a human-readable string for a single student tuple.

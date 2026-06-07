@@ -1,8 +1,3 @@
-# lib/filter.py  (the test file imports from lib.filters — rename if needed)
-# Provides filtering utilities for the student dataset.
-# Uses list and dictionary comprehensions for concise, readable logic.
-
-
 def filter_students_by_major(students, major):
     """
     Return a filtered list of students who match the given major.

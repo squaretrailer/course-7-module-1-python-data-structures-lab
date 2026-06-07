@@ -1,13 +1,3 @@
-# lib/data_generator.py
-# Demonstrates generator expressions for memory-efficient data processing.
-#
-# Why generators?
-#   A list comprehension evaluates ALL results immediately and stores them
-#   in memory. A generator expression is lazy — it computes each value only
-#   when requested (via next() or a for loop). For large datasets this saves
-#   significant memory, since only one item is held in memory at a time.
-
-
 def student_generator(students, major):
     """
     Return a generator that lazily yields students filtered by major.

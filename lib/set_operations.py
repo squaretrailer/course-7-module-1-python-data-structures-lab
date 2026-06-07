@@ -1,9 +1,3 @@
-# lib/set_operations.py
-# Uses Python sets and set comprehensions to derive unique student attributes.
-# Sets automatically eliminate duplicates, making them ideal for tracking
-# distinct values like majors across a large dataset.
-
-
 def unique_majors(students):
     """
     Return a set of unique majors found across all students.
